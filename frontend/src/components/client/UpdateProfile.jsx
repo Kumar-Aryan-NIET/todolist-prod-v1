@@ -32,7 +32,7 @@ const UpdateProfile = () => {
     setError('');
     setLoading(true);
     try {
-      await api.put('/user/profile', { name, phone, password: password || undefined });
+      await api.put('/api/user/profile', { name, phone, password: password || undefined });
       setMessage('Profile updated successfully');
       setPassword('');
       setUserName(name);
