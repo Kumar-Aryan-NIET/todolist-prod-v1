@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../utils/api';
 import { getToken } from '../../utils/auth';
 
 const ViewTodos = () => {
@@ -10,7 +10,7 @@ const ViewTodos = () => {
     setError('');
     try {
       const token = getToken();
-      const response = await axios.get('/api/todos', {
+      const response = await api.get('/api/todos', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTodos(response.data);
